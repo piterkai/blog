@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}分类查询结果{% endblock %}
+{% block left %}
+    <div id="main">
+        <br><br>
+        <div class="archives">
+
+           {% for a_post in a_post_list %}
+                <article class="archive-article archive-type-post">
+                  <div class="archive-article-inner">
+                    <header class="archive-article-header">
+                    <a href="http://127.0.0.1:8000/category/1#" class="archive-article-date">
+                         <time>{{ a_post.created|date:'Y-m' }}</time>
+                    </a>
+
+                     <h1 itemprop="name">
+                          <a class="archive-article-title" target="_blank" href="http://127.0.0.1:8000/post/{{ a_post.id }}">{{ a_post.title }}</a>
+                     </h1>
+                     </header>
+                  </div>
+                </article>
+           {% endfor %}
+
+
+
+        </div>
+    </div>
+{% endblock %}
